@@ -1,0 +1,8 @@
+slicemap
+========
+
+a map implemented with a sorted slice underneath, using binary search.
+
+done as an exercise. should not be used.
+
+I expected it to be faster than the standard `map` for very little data, but turns out it isn't.
