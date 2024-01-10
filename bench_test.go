@@ -9,7 +9,7 @@ import (
 )
 
 func BenchmarkSliceMap(b *testing.B) {
-	for _, n := range []int{5, 10, 20, 40, 80, 160} {
+	for _, n := range []int{10, 30, 90, 240} {
 		b.Run(fmt.Sprintf("%d:store()", n), func(b *testing.B) {
 			for i := 0; i < b.N; i++ {
 				m := slicemap.New2[string, any]()
