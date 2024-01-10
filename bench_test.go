@@ -12,14 +12,14 @@ func BenchmarkSliceMap(b *testing.B) {
 	for _, n := range []int{5, 10, 20, 40, 80, 160} {
 		b.Run(fmt.Sprintf("%d:store()", n), func(b *testing.B) {
 			for i := 0; i < b.N; i++ {
-				m := slicemap.New[string, any]()
+				m := slicemap.New2[string, any]()
 				for i := 0; i < n; i++ {
 					m.Store(strconv.Itoa(i), i)
 				}
 			}
 		})
 		b.Run(fmt.Sprintf("%d:load()", n), func(b *testing.B) {
-			m := slicemap.New[string, any]()
+			m := slicemap.New2[string, any]()
 			for i := 0; i < n; i++ {
 				m.Store(strconv.Itoa(i), i)
 			}
@@ -64,14 +64,14 @@ func BenchmarkSliceMapInts(b *testing.B) {
 	for _, n := range []int{5, 10, 20, 40, 80, 160} {
 		b.Run(fmt.Sprintf("%d:store()", n), func(b *testing.B) {
 			for i := 0; i < b.N; i++ {
-				m := slicemap.New[int, any]()
+				m := slicemap.New2[int, any]()
 				for i := 0; i < n; i++ {
 					m.Store(i, i)
 				}
 			}
 		})
 		b.Run(fmt.Sprintf("%d:load()", n), func(b *testing.B) {
-			m := slicemap.New[int, any]()
+			m := slicemap.New2[int, any]()
 			for i := 0; i < n; i++ {
 				m.Store(i, i)
 			}
